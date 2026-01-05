@@ -3,6 +3,6 @@ def call(Map config = [:]) {
     def imageTag = config.imageTag ?: 'latest'
     def dockerfile = config.dockerfile ?: 'Dockerfile'
     def context = config.context ?: '.'
-    def  DockerHubUser = config.DockerHubUser ?: error('enter docker hub user namne' )
-  sh "docker build tag "${DockerHubUser}"/"${imageName}":"${imageTag}" -f "${dockerfile}" "${context}" "
+    def  dockerHubUser = config.dockerHubUser ?: error('enter docker hub user namne' )
+  sh "docker build tag "${dockerHubUser}"/"${imageName}":"${imageTag}" -f "${dockerfile}" "${context}" "
 }

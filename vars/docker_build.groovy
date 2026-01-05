@@ -1,3 +1,3 @@
 def call(String ProjectName, String ImageTag, String DockerHubUser){
-  sh "docker buildex build t "${DockerHubUser}"/"${ProjectName}":"${ImageTag}" . "
+  sh "docker build tag "${DockerHubUser}"/"${ProjectName}":"${ImageTag}" . "
 }
